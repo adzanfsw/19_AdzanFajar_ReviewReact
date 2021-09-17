@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    margin: 0 auto;
+    font-family: Roboto;
+}
+
+.container {
+    display: flex;
+}
+
+.gambar {
+    flex-basis: 45%;
+    height: 700px;
+
+    background-image: url(images/charles.jpg);
+    background-repeat: no-repeat;
+}
+
+.biru {
+    background-color: navy;
+    width: 468px;
+    height: 700px;
+    opacity: 40%;
+}
+
+.gambar img {
+    margin: 0 auto;
+    opacity: 100%;
+    position: absolute;
+    width: 275px;
+    height: 142px;
+    left: 96px;
+    top: 279px;
+}
+
+.formulir {
+    flex-basis: 55%;
+    height: 700px;
+}
+
+form {
+    margin: 65px 0 0 70px;
+}
+
+p {
+    font-size: 15px;
+    color: navy;
+    margin: 25px 0 5px 0;
+}
+
+.isi {
+    color: navy;
+    font-size: 25px;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 70%;
+    padding: 5px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+option #pilih {
+    color: #767576;
+}
+
+button {
+	display: inline;
+	margin: 4px 2px;
+	background-color: #F47522;
+	border-radius: 25px;
+	border: none;
+	color: white;
+	padding: 10px 15px 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+button:hover {
+    background-color: darkorange;
+}

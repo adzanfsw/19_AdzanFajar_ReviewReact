@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+	font-family: Roboto;
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
+.App {
+	background: url('images/bgimg.png');
+	background-repeat: no-repeat;
+	width: auto;
+	height: 667px;
+	margin: 0 auto;
+}
+
+header {
+	background-color: white;
+	height: 75px;
+	padding: 5px;
+	position: sticky;
+}
+
+header img {
+	height: 60px;
+	float: left;
+	margin-left: 120px;
+	margin-top: 10px;
+}
+
+header ul {
+	margin-right: 100px;
+}
+
+header li {
+	font-size: 15px;
+	font-weight: 500;
+	color: #19345e;
+
+	display: inline;
+	list-style-type: none;
+	padding: 15px 20px 0 20px;
+	float: right;
+}
+
+header a {
+	color: #19345e;
+	text-decoration: none;	
+}
+
+content {
+	display: flex;
+	height: 500px;
+	margin: 0 auto;
+	border-radius: 15px;
+	align-items: center;
+}
+
+.foto {
+	flex-basis: 50%;
+}
+
+content img {
+	align-content: center;
+	float: right;
+	margin: 50px 50px 0 0;
+	height: 350px;
+	border-radius: 50%;
+}
+
+.nama {
+	font-weight: 700;
+	font-size: 20px;
+	margin: 0 auto;
+	float: left;
+	line-height: 3;
+	color: #19345e;
+
+	flex-basis: 50%;
+}
+
+.nama p {
+	font-size: 30px;
+	line-height: 10%;
+}
+
+label {
+	font-size: 70px;
+	line-height: 0;
+}
+
+button {
+	display: inline;
+	margin: 4px 2px;
+	background-color: #F47522;
+	border-radius: 25px;
+	border: none;
+	color: white;
+	padding: 10px 15px 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: darkorange;
+}
