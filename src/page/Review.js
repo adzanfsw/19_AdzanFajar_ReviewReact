@@ -1,7 +1,10 @@
-import { useState } from "react/cjs/react.development";
+import { useSelector } from "react-redux";
 import '../assets/style-review.css'
 
 function Review () {
+    const data = useSelector ((state) => state.databaru.userdata);
+    console.log("ini isi data nya", data)
+
     return (
         <div>
             <div className="kotak">

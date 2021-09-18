@@ -1,14 +1,26 @@
-import React, { Component } from 'react';
+import { useDispatch } from "react-redux";
+import { passData } from "../store/UserSlice";
 import { useState } from "react/cjs/react.development";
+import { Link } from "react-router-dom";
 import '../assets/style-contact-us.css'
 
 function ContactUs () {
+    const [data, setData] = useState ({
+        fname: "",
+        email: "",
+        nomor: "",
+        negara: "",
+        bio: ""
+    })
+
     const regexNum = /^[0-9]*$/;
     const regexWord = /^[A-Za-z ]*$/;
     const regexMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const [errNama, setErrNama] = useState ("")
     const [errMail, setErrMail] = useState ("")
     const [errNum, setErrNum] = useState ("")
+
+    const dispatch = useDispatch()
 
     const handleInput = e => {
     const nama = e.target.name;
@@ -36,6 +48,37 @@ function ContactUs () {
             } else {
                 setErrNum("No HP harus berupa angka!")
             }
+        }
+
+        setData ({
+            ...data,
+            [nama]: value
+        })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const formIsNotEmpty = data.fname && data.email && data.nomor
+
+        if (formIsNotEmpty) {
+            const newData = {
+                fname: data.fname,
+                email: data.email,
+                nomor: data.nomor,
+                negara: data.negara,
+                bio: data.bio,
+            }
+
+            dispatch(passData(newData));
+            setData({
+                fname: "",
+                email: "",
+                nomor: "",
+                negara: "",
+                bio: ""
+            })
+        } else {
+            alert("Data masih kosong!!")
         }
     }
 
@@ -68,25 +111,25 @@ function ContactUs () {
 
                     <label>
                         <p>Full Name</p>
-                        <input type="text" name="fname" onChange={handleInput} placeholder="Your full name here .." required/> <br />
+                        <input type="text" name="fname" value={data.fname} onChange={handleInput} placeholder="Your full name here .." required/> <br />
                         <span style={{color: "red", fontSize: 13, margin: 0}}>{errNama}</span>
                     </label>
 
                     <label>
                         <p>Email Address</p>
-                        <input type="text" name="email" onChange={handleInput} placeholder="example@domain.com" required/> <br />
+                        <input type="text" name="email" value={data.email} onChange={handleInput} placeholder="example@domain.com" required/> <br />
                         <span style={{color: "red", fontSize: 13, marginBottom: 10}}>{errMail}</span>
                     </label>
 
                     <label>
                         <p>Phone Number</p>
-                        <input type="text" name="nomor" onChange={handleInput} placeholder="0 87362 xxxxx" required/> <br />
+                        <input type="text" name="nomor" value={data.nomor} onChange={handleInput} placeholder="0 87362 xxxxx" required/> <br />
                         <span style={{color: "red", fontSize: 13, marginBottom: 10}}>{errNum}</span>
                     </label>
 
                     <label>
                         <p>Nationality:</p>
-                        <select name="negara">
+                        <select name="negara" value={data.negara}>
                             <option id="pilih" value="pilih" disabled selected hidden>Selected</option>
                             <option value="indo">Indonesian</option>
                             <option value="amrik">American</option>
@@ -98,10 +141,10 @@ function ContactUs () {
 
                     <label>
                         <p style={{marginBottom: 11}}>Message</p>
-                        <textarea name="bio" rows="10" placeholder="Your message here .." /> <br />
+                        <textarea name="bio" value={data.bio} rows="10" placeholder="Your message here .." /> <br />
                     </label>
                     
-                    <button>Submit</button>
+                    <button onClick={handleSubmit}><Link to="/review">Submit</Link></button>
                 </form>
             </div>
         </div>

@@ -1,4 +1,5 @@
 import '../assets/style.css'
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -7,10 +8,10 @@ function Home() {
             <img src={require('../assets/images/logo-ALTA.png').default} />
            
             <ul>
-                <li><a href="contact_us.html">CONTACT US</a></li>
+                <li><a href="contact_us.html"><Link to="/contact">CONTACT US</Link></a></li>
                 <li>EXPERIENCE</li>
                 <li>ABOUT</li>
-                <li style={{color: "#F47522"}}>HOME</li>
+                <li style={{color: "#F47522"}}><Link to="/">HOME</Link></li>
             </ul>
         </header>
 
@@ -24,7 +25,7 @@ function Home() {
                 <label>Anne Sullivan</label>
                 <p>I build things for the web.</p>
 
-                <button>Get in touch</button>
+                <Link to="/contact"><button>Get in touch</button></Link>
             </div>
         </content>
     </div>
