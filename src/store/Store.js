@@ -6,17 +6,20 @@ import storage from "redux-persist/lib/storage";
 import UserSlice from "./UserSlice";
 
 const reducers = combineReducers({
-    passenger: UserSlice
+    userdata: UserSlice
 })
 
 const persistConfig = {
-    key: 'root',
-    storage
+    key: "root",
+    storage,
 };
 
-const persistedReducer = persistReducer(persistConfig, reducers)
+  const persistedReducer = persistReducer(persistConfig, reducers);
 
-const store = configureStore ({reducer: persistedReducer})
-const persistor = persistStore(store)
-
-export { store, persistor }
+  const store = configureStore({
+    reducer: persistedReducer,
+  });
+  
+  const persistor = persistStore(store);
+  
+  export { store, persistor };

@@ -8,10 +8,11 @@ function Home() {
             <img src={require('../assets/images/logo-ALTA.png').default} />
            
             <ul>
-                <li><a href="contact_us.html"><Link to="/contact">CONTACT US</Link></a></li>
+                <li><Link to="/contact">CONTACT US</Link></li>
                 <li>EXPERIENCE</li>
                 <li>ABOUT</li>
-                <li style={{color: "#F47522"}}><Link to="/">HOME</Link></li>
+                <li><Link to="/news">NEWS</Link></li>
+                <Link to="/"><li style={{color: "#F47522"}}>HOME</li></Link>
             </ul>
         </header>
 

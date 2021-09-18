@@ -70,6 +70,11 @@ option #pilih {
     color: #767576;
 }
 
+a:link {
+	text-decoration: none;
+    color: white;
+}
+
 button {
 	display: inline;
 	margin: 4px 2px;

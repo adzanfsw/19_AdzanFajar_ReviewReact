@@ -10,7 +10,7 @@ body {
 	background: url('images/bgimg.png');
 	background-repeat: no-repeat;
 	width: auto;
-	height: 667px;
+	height: 900px;
 	margin: 0 auto;
 }
 
@@ -82,11 +82,17 @@ content img {
 .nama p {
 	font-size: 30px;
 	line-height: 10%;
+	color: #19345e;
 }
 
 label {
 	font-size: 70px;
 	line-height: 0;
+	color: #19345e;
+}
+
+a:link {
+	text-decoration: none;
 }
 
 button {

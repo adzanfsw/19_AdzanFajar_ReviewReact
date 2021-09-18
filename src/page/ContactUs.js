@@ -9,7 +9,7 @@ function ContactUs () {
         fname: "",
         email: "",
         nomor: "",
-        negara: "",
+        negara: "Selected",
         bio: ""
     })
 
@@ -74,7 +74,7 @@ function ContactUs () {
                 fname: "",
                 email: "",
                 nomor: "",
-                negara: "",
+                negara: "Selected",
                 bio: ""
             })
         } else {
@@ -129,7 +129,7 @@ function ContactUs () {
 
                     <label>
                         <p>Nationality:</p>
-                        <select name="negara" value={data.negara}>
+                        <select name="negara" value={data.negara} onChange={handleInput}>
                             <option id="pilih" value="pilih" disabled selected hidden>Selected</option>
                             <option value="indo">Indonesian</option>
                             <option value="amrik">American</option>
@@ -141,7 +141,7 @@ function ContactUs () {
 
                     <label>
                         <p style={{marginBottom: 11}}>Message</p>
-                        <textarea name="bio" value={data.bio} rows="10" placeholder="Your message here .." /> <br />
+                        <textarea name="bio" value={data.bio} onChange={handleInput} rows="10" placeholder="Your message here .." /> <br />
                     </label>
                     
                     <button onClick={handleSubmit}><Link to="/review">Submit</Link></button>

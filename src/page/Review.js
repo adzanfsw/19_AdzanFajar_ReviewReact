@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import '../assets/style-review.css'
 
 function Review () {
-    const data = useSelector ((state) => state.databaru.userdata);
+    const data = useSelector ((state) => state.userdata);
     console.log("ini isi data nya", data)
 
     return (

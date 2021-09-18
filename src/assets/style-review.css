@@ -66,6 +66,10 @@ hr {
     padding-top: 35px;
 }
 
+a:link {
+	text-decoration: none;
+}
+
 button {
 	display: inline;
 	margin: 4px 2px;

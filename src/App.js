@@ -6,9 +6,10 @@ import { store, persistor } from "./store/Store";
 import Review from './page/Review';
 import Home from './page/Home';
 import ContactUs from './page/ContactUs';
+import News from './page/News'
 
 function App() {
-  return (
+    return (
           <Provider store={store}>
               <PersistGate loading={null} persistor={persistor}>
                   <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
                           <Route path="/" exact component={Home} />
                           <Route path="/contact" exact component={ContactUs} />
                           <Route path="/review" exact component={Review} />
+                          <Route path="/news" exact component={News} />
 
                           {/* <Route path="*" component={} /> */}
                       </Switch>
