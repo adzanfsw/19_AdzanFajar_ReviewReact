@@ -5,8 +5,8 @@ const initialValue = [
         fname: "",
         email: "",
         nomor: "",
-        negara: "Selected",
-        bio: ""
+        negara: "",
+        bio: "",
     }]
 
 export const UserSlice = createSlice({
